@@ -1,4 +1,4 @@
-# PL2025-A104005
+# EngWeb2025-A104005
 
 
 ## Autor  
@@ -8,4 +8,4 @@
 
 
 ## Resumo  
-- Sobre o contexto da unidade curricular de Engenharia Web, neste repositório permanece todo o trabalho realizado no âmbito da disciplina ao longo do ano letivo 2024/25.
+- Sob o contexto da unidade curricular de Engenharia Web, neste repositório permanece todo o trabalho realizado no âmbito da disciplina ao longo do ano letivo 2024/25.
