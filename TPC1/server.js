@@ -1,49 +1,48 @@
-const express = require("express");
-const axios = require("axios");
+const http = require('http');
+const axios = require('axios');
 
-const app = express();
+http.createServer(async (req, res) => {
+    console.log("METHOD: " + req.method);
+    console.log("URL: " + req.url);
 
-app.set("view engine", "ejs");
-app.use(express.static("public"));
-
-// Rota principal - Lista todas as reparações
-app.get("/", async (req, res) => {
-    try {
-        const response = await axios.get("http://localhost:3001/reparacoes");
-        res.render("index", { reparacoes: response.data });
-    } catch (error) {
-        res.status(500).send("Erro ao obter dados da API");
-    }
-});
-
-// Rota para listar tipos de intervenção
-app.get("/intervencoes", async (req, res) => {
-    try {
-        const response = await axios.get("http://localhost:3001/intervencoes");
-        res.render("intervencoes", { intervencoes: response.data });
-    } catch (error) {
-        res.status(500).send("Erro ao obter dados da API");
-    }
-});
-
-// Rota para listar marcas e modelos dos carros intervencionados
-app.get("/carros", async (req, res) => {
-    try {
-        const response = await axios.get("http://localhost:3001/reparacoes");
-        const carros = response.data.reduce((acc, reparacao) => {
-            const key = `${reparacao.viatura.marca} ${reparacao.viatura.modelo}`;
-            if (!acc[key]) {
-                acc[key] = { marca: reparacao.viatura.marca, modelo: reparacao.viatura.modelo, count: 0 };
+    switch(req.method) {
+        case "GET":
+            switch(req.url) {
+                case "/reparacoes":
+                    try {
+                        const response = await axios.get("http://localhost:3001/reparacoes");
+                        res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'});
+                        res.write('<h1>Lista de Reparações</h1>');
+                        res.write('<table border="1"><tr><th>Data</th><th>NIF</th><th>Nome</th><th>Marca</th><th>Modelo</th><th>Número de Intervenções</th></tr>');
+                        response.data.forEach(reparacao => {
+                            res.write(`<tr>
+                                <td>${reparacao.data}</td>
+                                <td>${reparacao.nif}</td>
+                                <td>${reparacao.nome}</td>
+                                <td>${reparacao.viatura.marca}</td>
+                                <td>${reparacao.viatura.modelo}</td>
+                                <td>${reparacao.nr_intervencoes}</td>
+                            </tr>`);
+                        });
+                        res.write('</table>');
+                        res.end();
+                    } catch (error) {
+                        res.writeHead(500, {'Content-Type': 'text/html;charset=utf-8'});
+                        res.write('<p>Erro ao obter dados da API</p>');
+                        res.end();
+                    }
+                    break;
+                default:
+                    res.writeHead(404, {'Content-Type': 'text/html;charset=utf-8'});
+                    res.end();
+                    break;
             }
-            acc[key].count++;
-            return acc;
-        }, {});
-        res.render("carros", { carros: Object.values(carros) });
-    } catch (error) {
-        res.status(500).send("Erro ao obter dados da API");
+            break;
+        default:
+            res.writeHead(405, {'Content-Type': 'text/html;charset=utf-8'});
+            res.end();
+            break;
     }
-});
+}).listen(1234);
 
-app.listen(3000, () => {
-    console.log("Servidor em: http://localhost:3000");
-});
+console.log("Servidor a escuta na porta 1234...");
