@@ -52,6 +52,9 @@ http.createServer(async (req, res) => {
                         res.write('<p>Erro ao obter dados da API</p>');
                         res.end();
                     }
+                    break;
+
+
                 default:
                     res.writeHead(404, {'Content-Type': 'text/html;charset=utf-8'});
                     res.end();
