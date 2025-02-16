@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Intervenção</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Tipos de Intervenção</h1>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+        </tr>
+        <% intervencoes.forEach(intervencao => { %>
+            <tr>
+                <td><%= intervencao.codigo %></td>
+                <td><%= intervencao.nome %></td>
+                <td><%= intervencao.descricao %></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

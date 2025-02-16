@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina de Reparações</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Reparações</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Veículo</th>
+            <th>Matrícula</th>
+            <th>Data</th>
+            <th>Intervenções</th>
+        </tr>
+        <% reparacoes.forEach(reparacao => { %>
+            <tr>
+                <td><%= reparacao.nome %></td>
+                <td><%= reparacao.viatura.marca %> <%= reparacao.viatura.modelo %></td>
+                <td><%= reparacao.viatura.matricula %></td>
+                <td><%= reparacao.data %></td>
+                <td>
+                    <ul>
+                        <% reparacao.intervencoes.forEach(intervencao => { %>
+                            <li><strong><%= intervencao.nome %></strong>: <%= intervencao.descricao %></li>
+                        <% }) %>
+                    </ul>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
