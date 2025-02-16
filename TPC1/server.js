@@ -32,6 +32,26 @@ http.createServer(async (req, res) => {
                         res.end();
                     }
                     break;
+                case "/marcas":
+                    try{
+                        const response = await axios.get("http://localhost:3001/reparacoes");
+                        const marcas = new Set();
+                        res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'});
+                        res.write('<h1>Lista de Marcas</h1>');
+                        res.write('<ul>');
+                        response.data.forEach(reparacao => {
+                            if(!marcas.has(reparacao.viatura.marca)){
+                                marcas.add(reparacao.viatura.marca);
+                                res.write(`<li>${reparacao.viatura.marca}</li>`);
+                            }
+                        });
+                        res.write('</ul>');
+                        res.end();
+                    } catch (error) {
+                        res.writeHead(500, {'Content-Type': 'text/html;charset=utf-8'});
+                        res.write('<p>Erro ao obter dados da API</p>');
+                        res.end();
+                    }
                 default:
                     res.writeHead(404, {'Content-Type': 'text/html;charset=utf-8'});
                     res.end();
