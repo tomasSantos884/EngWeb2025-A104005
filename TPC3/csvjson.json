@@ -1,11 +1,6 @@
 {
   "alunos": [
     {
-      "id": "A100893",
-      "nome": "Luís de Castro Rodrigues Caetano",
-      "gitlink": "https://github.com/056zedelta/EngWeb2024.git"
-    },
-    {
       "id": "A100701",
       "nome": "Pedro Duarte Nobre Viana",
       "gitlink": "https://github.com/dvianaa/EngWeb2024"

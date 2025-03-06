@@ -41,16 +41,37 @@ var alunosServer = http.createServer((req, res) => {
             case "GET": 
                 // GET /alunos --------------------------------------------------------------------
                 if(req.url == '/' || req.url == '/alunos'){
-                    // TODO
-                    res.writeHead(405, {'Content-Type': 'text/html; charset=utf-8'})
-                    res.end()
+                    axios.get('http://localhost:3000/alunos')
+                    .then(resp => {
+                        alunos = resp.data
+                        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+                        res.write(templates.studentsListPage(alunos, d))
+                        res.end()
+
+                    }).catch(erro => {
+                        console.log(erro)
+                        res.writeHead(500, {'Content-Type': 'text/html; charset=utf-8'})
+                        res.end()
+                    })
                     
                 }
                 // GET /alunos/:id --------------------------------------------------------------------
                 else if(req.url.match(/\/alunos\/(A|PG)\d+$/)){
-                    // TODO
-                    res.writeHead(405, {'Content-Type': 'text/html; charset=utf-8'})
-                    res.end()
+                    id = req.url.split('/')[2]
+                    axios.get('http://localhost:3000/alunos/' + id)
+                    .then(resp => {
+                        aluno = resp.data
+                        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+                        res.write(templates.studentPage(aluno, d))
+                        res.end()
+
+                    }
+                    ).catch(erro => {
+                        console.log(erro)
+                        res.writeHead(500, {'Content-Type': 'text/html; charset=utf-8'})
+                        res.end()
+                    })
+                    
                     
                 }
                 // GET /alunos/registo --------------------------------------------------------------------
@@ -98,7 +119,7 @@ var alunosServer = http.createServer((req, res) => {
                 }
                 // GET ? -> Lancar um erro
                 else {
-                    // TODO
+                    
                     res.writeHead(404, {'Content-Type': 'text/html; charset=utf-8'})
                     res.write('<p>' + "Método não suportado: " + req.method + '</p>')
                     res.end()
