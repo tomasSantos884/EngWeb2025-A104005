@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+    .w3-card-4
+        header.w3-container.w3-orange
+            h2 Film Edit Form
+        
+        form.w3-container(method="POST")
+            fieldset 
+                legend Metadata 
+                label Title
+                input.w3-input.w3-round(type="text", name="nome", readonly, value=filme.title)
+                label Year
+                input.w3-input.w3-round(type="text", name="Ano", value=filme.year)
+            fieldset 
+                legend Cast
+                label Actors
+                    input.w3-input.w3-round(type="text", name="Ator", value=filme.cast)
+            fieldset 
+                legend Genres
+                input.w3-input.w3-round(type="text", name="generos", value=filme.genres)
+
+
+        
+            br
+            button.w3-btn.w3-orange.w3-mb-2(type="submit") Edit
