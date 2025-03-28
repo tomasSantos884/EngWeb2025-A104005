@@ -1,0 +1,13 @@
+block content
+  .w3-card-4
+    header.w3-container.w3-pink
+      h1 Aluno #{aluno._id}
+
+    .w3-container
+      ul.w3-ul.w3-card-4(style="width:50%")
+        li Nome: #{aluno.nome}
+        li Git: #{aluno.gitlink}
+        li Nota Prática: #{aluno.pratica != null ? aluno.pratica : 'Em falta'}
+        li Nota Teste: #{aluno.teste != null ? aluno.teste : 'Em falta'}
+        li TPCs: #{[1,2,3,4,5,6,7,8].filter(i => aluno['tpc' + i]).map(i => 'TPC' + i).join(', ') || '  Nenhum TPC realizado'}
+           
