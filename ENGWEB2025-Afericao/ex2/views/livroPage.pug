@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= livro.title
+  p Data atual: #{data}
+
+  // Exibe todos os campos do livro
+  ul
+    li ID: #{livro._id}
+    li Title: #{livro.title}
+    li Authors:
+      ul
+        each autor in livro.author
+          li: a(href=`/autores/${livro.author}`) #{livro.author}
+    li Publish Date: #{livro.publishDate}
+    li Pages: #{livro.pages}
+    if livro.coverImg
+      li Cover Image:
+        img(src=livro.coverImg, alt=`Cover of ${livro.title}`)
+
+  // Link para voltar à página principal
+  a(href='/') Voltar à página principal

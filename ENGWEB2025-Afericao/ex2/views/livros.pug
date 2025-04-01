@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  // Cabeçalho com metainformação
+  p Data atual: #{data}
+
+  // Tabela com a lista de registos
+  table(border="1")
+    thead
+      tr
+        th ID
+        th Title
+        th Author
+        th Publish Date
+        th Pages
+    tbody
+      each livro in llist
+        tr
+          td: a(href=`/${livro._id}`) #{livro._id}
+          td #{livro.title}
+          td
+            each autor in livro.author
+              a(href=`/${livro.author}`) #{livro.author}
+          td #{livro.publishDate}
+          td #{livro.pages}
