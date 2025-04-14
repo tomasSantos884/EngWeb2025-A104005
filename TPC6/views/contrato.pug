@@ -1,0 +1,45 @@
+link(rel="stylesheet", href="/stylesheets/style.css")
+
+block content
+    .w3-card-4
+        header.w3-container.w3-teal
+            h1 
+                span Detalhes do Contrato
+        .w3-container
+            if contrato
+                table.w3-table-all
+                    tr
+                        th ID
+                        td= contrato._id
+                    tr
+                        th n_Anuncio
+                        td= contrato.nAnuncio
+                    tr
+                        th Tipo de Procedimento
+                        td= contrato.tipoprocedimento
+                    tr
+                        th Objeto do Contrato
+                        td= contrato.objectoContrato
+                    tr
+                        th Data de Publicação
+                        td= contrato.dataPublicacao
+                    tr
+                        th Data de Celebração
+                        td= contrato.dataCelebracaoContrato
+                    tr
+                        th Preço Contratual
+                        td= contrato.precoContratual
+                    tr
+                        th Prazo de Execução
+                        td= contrato.prazoExecucao
+                    tr
+                        th NIPC da Entidade Comunicante
+                        td= contrato.NIPC_entidade_comunicante
+                    tr
+                        th Entidade Comunicante
+                        td= contrato.entidade_comunicante
+                    tr
+                        th Fundamentação
+                        td= contrato.fundamentacao
+            else
+                p Contrato não encontrado.

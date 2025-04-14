@@ -1,0 +1,45 @@
+
+link(rel="stylesheet", href="/stylesheets/style.css")
+
+block content
+    .w3-card-4
+        header.w3-container.w3-teal
+            h1 
+                span Lista de Contratos
+        
+        .w3-container
+            if clist && clist.length > 0
+                table.w3-table-all
+                    tr
+                        th ID
+                        th n_Anuncio
+                        th tipoprocedimento
+                        th objectoContrato
+                        th dataPublicacao
+                        th dataCelebracaoContrato
+                        th precoContratual
+                        th prazoExecucao
+                        th NIPC_entidade_comunicante
+                        th entidade_comunicante
+                        th fundamentacao
+                    each c in clist 
+                        tr
+                            td 
+                                a(href="/front/contratos/" + c._id)= c._id
+                            td= c.nAnuncio
+                            td= c.tipoprocedimento
+                            td= c.objectoContrato
+                            td= c.dataPublicacao
+                            td= c.dataCelebracaoContrato
+                            td= c.precoContratual
+                            td= c.prazoExecucao
+                            td= c.NIPC_entidade_comunicante
+                            td
+                                a(href="/front/entidades/" + c.entidade_comunicante)= c.entidade_comunicante
+                            td= c.fundamentacao
+                            td
+                                a(href="/front/edit/" + c._id) Edit
+                                |  
+                                a(href="/front/delete/" + c._id) Delete
+            else
+                p Nenhum aluno encontrado.

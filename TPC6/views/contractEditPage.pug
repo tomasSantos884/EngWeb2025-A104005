@@ -1,0 +1,35 @@
+extends layout 
+
+block content 
+    .w3-card-4
+        header.w3-container.w3-teal
+            h2 Formulário de Edição de Contrato
+
+        form.w3-container(method="POST")
+            fieldset
+                legend Informações do Contrato
+                label ID do Contrato
+                input.w3-input.w3-round(type="text" name="_id" readonly value=`${contrato._id}`)
+                label Número do Anúncio
+                input.w3-input.w3-round(type="text" name="nAnuncio" value=`${contrato.nAnuncio}`)
+                label Tipo de Procedimento
+                input.w3-input.w3-round(type="text" name="tipoprocedimento" value=`${contrato.tipoprocedimento}`)
+                label Objeto do Contrato
+                input.w3-input.w3-round(type="text" name="objectoContrato" value=`${contrato.objectoContrato}`)
+                label Data de Publicação
+                input.w3-input.w3-round(type="date" name="dataPublicacao" value=`${contrato.dataPublicacao}`)
+                label Data de Celebração do Contrato
+                input.w3-input.w3-round(type="date" name="dataCelebracaoContrato" value=`${contrato.dataCelebracaoContrato}`)
+                label Preço Contratual
+                input.w3-input.w3-round(type="number" step="0.01" name="precoContratual" value=`${contrato.precoContratual}`)
+                label Prazo de Execução
+                input.w3-input.w3-round(type="text" name="prazoExecucao" value=`${contrato.prazoExecucao}`)
+                label NIPC da Entidade Comunicante
+                input.w3-input.w3-round(type="text" name="NIPC_entidade_comunicante" value=`${contrato.NIPC_entidade_comunicante}`)
+                label Entidade Comunicante
+                input.w3-input.w3-round(type="text" name="entidade_comunicante" value=`${contrato.entidade_comunicante}`)
+                label Fundamentação
+                textarea.w3-input.w3-round(name="fundamentacao") #{contrato.fundamentacao}
+
+            br
+            button.w3-btn.w3-teal.w3-mb-2(type="submit") Editar
