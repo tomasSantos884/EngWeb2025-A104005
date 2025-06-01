@@ -1,0 +1,237 @@
+extends layout
+
+
+
+
+
+
+block content
+
+  #comment-modal(style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); z-index:1000; align-items:center; justify-content:center;")
+    .modal-content(style="background:#fff; padding:24px; border-radius:8px; min-width:320px; max-width:90vw; box-shadow:0 2px 8px rgba(0,0,0,0.15); display:flex; flex-direction:column; gap:12px;")
+      label(for="comment-textarea") Escreve o teu comentário:
+      textarea#comment-textarea(rows="6" style="width:100%; resize:vertical;")
+      .modal-actions(style="display:flex; gap:10px; justify-content:flex-end;")
+        button(type="button" id="comment-cancel") Cancelar
+        button(type="button" id="comment-submit") Submeter
+  .prompt(style="width: 200%; max-width: 1200px; margin: auto -250px;")
+    .header
+      // Wrap the header content in a div for Flexbox styling
+      div(style="display: flex; align-items: center; justify-content: space-between; margin-top: 30px;")
+        if user
+          h3(style="margin: 0;") Bem-vindo, #{user.nome || user.username}!
+          // Group the buttons
+          div
+            a.logout(href=`/me/${user._id || user.id}`, style='margin-left: 10px;') Minha Página
+            a.logout(href='/auth/logout', style='margin-left: 10px;') Logout
+        else
+          h3(style="margin: 0;") Bem-vindo à Página Pública!
+          a.button(href='/auth/login', style='margin-left: 10px;') Login
+    
+    .filters(style="margin: auto 350px; width: 62%; margin-top: 40px;")
+      h4 Filtrar por Classificadores
+        ul#classificadores-filtro(style="margin-top:10px")
+
+        h4 Ordenar por:
+        select#sort-select
+          option(value='') -- Selecionar --
+          option(value='data-desc') Data (Mais recente → Mais antigo)
+          option(value='data-asc') Data (Mais antigo → Mais recente)
+          option(value='tipo-asc') Tipo de Recurso (A-Z)
+          option(value='tipo-desc') Tipo de Recurso (Z-A)
+    
+    
+    hr
+    h2(style="margin-top: 300px") Itens publicos:
+    table.table-itens
+      thead
+        tr
+          th Título
+          th Data de Criação
+          th Autor
+          th Tipo de Recurso
+          th Classificadores
+          th Ações
+      tbody#item-list
+        each item in items
+          tr(onclick=`window.location='/me/item/${item._id}/view'`, style='cursor: pointer;')
+            td= item.titulo
+            td= new Date(item.dataCriacao).toLocaleDateString()
+            td= item.produtor.nome
+            td= item.tipoRecurso
+            td
+              if item.classificadores && item.classificadores.length
+                each c in item.classificadores
+                  span.tag= c
+            td
+              button.share-btn(type='button', onclick=`event.stopPropagation(); shareItem('${item._id}')`) 📤
+              button.comment-btn(type='button', onclick=`event.stopPropagation(); commentItem('${item._id}')`) 💬
+
+    
+    
+    script.
+      const originalItems = !{JSON.stringify(items)};
+
+      const tbody = document.getElementById('item-list');
+      const classificadoresFiltro = document.getElementById('classificadores-filtro');
+      const sortSelect = document.getElementById('sort-select');
+
+      function renderItems(filteredItems) {
+        tbody.innerHTML = '';
+        filteredItems.forEach(item => {
+          const tr = document.createElement('tr');
+          tr.setAttribute('data-id', item._id);
+          tr.setAttribute('style', 'cursor: pointer;');
+          tr.setAttribute('onclick', `window.location='/me/item/${item._id}/view'`);
+
+          tr.innerHTML = `
+            <td>${item.titulo}</td>
+            <td>${new Date(item.dataCriacao).toLocaleDateString()}</td>
+            <td>${item.produtor.username || 'Desconhecido'}</td>
+            <td>${item.tipoRecurso}</td>
+            <td>${item.classificadores ? item.classificadores.map(c => `<span class="tag">${c}</span>`).join(' ') : ''}</td>
+            <td>
+              <button type="button" class="share-btn" onclick="event.stopPropagation(); shareItem('${item._id}')">📤</button>
+              <button type="button" class="comment-btn" onclick="event.stopPropagation(); commentItem('${item._id}')">💬</button>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function getUniqueClassificadores(items) {
+        const allClassificadores = items.flatMap(item => item.classificadores || []);
+        return [...new Set(allClassificadores)];
+      }
+
+      function filterAndSort() {
+        let filteredItems = originalItems;
+
+        const checkedClassificadores = [...document.querySelectorAll('#classificadores-filtro input:checked')].map(input => input.value);
+
+        if (checkedClassificadores.length) {
+          filteredItems = filteredItems.filter(item => {
+            return item.classificadores && checkedClassificadores.every(f => item.classificadores.includes(f));
+          });
+        }
+
+        const sortValue = sortSelect.value;
+        if (sortValue === 'data-desc') {
+          filteredItems.sort((a, b) => new Date(b.dataCriacao) - new Date(a.dataCriacao));
+        } else if (sortValue === 'data-asc') {
+          filteredItems.sort((a, b) => new Date(a.dataCriacao) - new Date(b.dataCriacao));
+        } else if (sortValue === 'tipo-asc') {
+          filteredItems.sort((a, b) => (a.tipoRecurso || '').localeCompare(b.tipoRecurso || ''));
+        } else if (sortValue === 'tipo-desc') {
+          filteredItems.sort((a, b) => (b.tipoRecurso || '').localeCompare(a.tipoRecurso || ''));
+        }
+
+        renderItems(filteredItems);
+      }
+
+      function initFilters() {
+        const uniqueClassificadores = getUniqueClassificadores(originalItems);
+
+        uniqueClassificadores.forEach(c => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <label>
+              <input type="checkbox" value="${c}">
+              ${c}
+            </label>
+          `;
+          classificadoresFiltro.appendChild(li);
+        });
+
+        classificadoresFiltro.addEventListener('change', filterAndSort);
+        sortSelect.addEventListener('change', filterAndSort);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initFilters();
+        renderItems(originalItems);
+      });
+
+      function deleteItem(itemId) {
+        if (confirm('Tens a certeza que queres apagar este item?')) {
+          fetch(`http://localhost:3000/api/items/${itemId}`, {
+            method: 'DELETE'
+          })
+          .then(response => {
+            if (response.ok) {
+              window.location.reload();
+            } else {
+              alert('Erro ao apagar item.');
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            alert('Erro de rede.');
+          });
+        }
+      }
+
+      function shareItem(itemId) {
+        const url = `http://localhost:3001/me/item/${itemId}`;
+        
+        if (navigator.share) {
+          navigator.share({
+            title: 'Dá uma olhada neste item!',
+            text: 'Encontrei este item interessante.',
+            url: url
+          })
+          .then(() => console.log('Partilha feita com sucesso!'))
+          .catch(err => console.error('Erro ao partilhar', err));
+        } else {
+          // Fallback: copiar para clipboard
+          navigator.clipboard.writeText(url).then(() => {
+            alert('Link copiado para a área de transferência!');
+          });
+        }
+      }
+
+      function commentItem(itemId) {
+        const modal = document.getElementById('comment-modal');
+        const textarea = document.getElementById('comment-textarea');
+        const submitBtn = document.getElementById('comment-submit');
+        const cancelBtn = document.getElementById('comment-cancel');
+
+        textarea.value = '';
+        modal.style.display = 'flex';
+
+        submitBtn.onclick = function() {
+          const comentario = textarea.value.trim();
+          if (comentario) {
+            fetch(`http://localhost:3000/api/comments`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' , 'Authorization': `Bearer ${window.apiToken}` },
+              body: JSON.stringify({ itemId, texto: comentario })
+            })
+            .then(response => {
+              if (response.ok) {
+                alert('Comentário adicionado!');
+                window.location.reload();
+              } else {
+                alert('Erro ao adicionar comentário.');
+              }
+            })
+            .catch(err => {
+              console.error(err);
+              alert('Erro de rede.');
+            });
+            modal.style.display = 'none';
+          } else {
+            alert('Por favor, escreve um comentário.');
+          }
+        };
+
+        cancelBtn.onclick = function() {
+          modal.style.display = 'none';
+        };
+      }
+
+  if token
+    script.
+      window.apiToken = "#{token}";
+
+

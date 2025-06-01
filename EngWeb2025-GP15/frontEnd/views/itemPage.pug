@@ -1,0 +1,249 @@
+extends layout
+
+block content
+  .item-editor
+    h2 Editor de Item
+
+    .toolbar
+        button(type='button', id='add-file') 📎 Ficheiro
+
+    form(id='item-editor-form' data-id=item._id)
+      section
+        label Título
+        input(type='text', name='titulo', value=item.titulo)
+
+      section
+        label Texto
+        textarea.txt-area(name='texto', rows='6')= item.componentes && item.componentes.texto
+
+      section 
+        label Descrição
+        textarea.txt-area(name='descricao', rows='4')= item.descricao
+
+      section 
+        label Classificadores 
+        #classificadores-container
+          input#classificadorInput(type='text', placeholder='Escreve e usa vírgula...', value=item.classificadores ? item.classificadores.join(', ') : '')
+          input(type='hidden', name='classificadores', value=item.classificadores ? item.classificadores.join(',') : '')
+
+      section 
+        label Publico 
+        input(type='checkbox', name='publico', checked=item.visibilidade)
+
+      section
+        label Metadados
+
+        if item.tipoRecurso === 'Viagens'
+          ul
+            li
+              label Destino:
+              input(type='text', name='destino', value=item.metadados && item.metadados.destino || '')
+            li
+              label Duração (dias):
+              input(type='number', name='duracaoDias', value=item.metadados && item.metadados.duracaoDias || '')
+        else if item.tipoRecurso === 'Gastronomia'
+          ul
+            li
+              label Restaurante:
+              input(type='text', name='restaurante', value=item.metadados && item.metadados.restaurante || '')
+            li
+              label Prato:
+              input(type='text', name='prato', value=item.metadados && item.metadados.prato || '')
+        else if item.tipoRecurso === 'Despesas'
+          ul
+            li
+              label Valor (€):
+              input(type='number', name='valor', step='0.01', value=item.metadados && item.metadados.valor || '')
+            li
+              label Categoria:
+              input(type='text', name='categoria', value=item.metadados && item.metadados.categoria || '')
+        else if item.tipoRecurso === 'Eventos'
+          ul
+            li
+              label Evento:
+              input(type='text', name='evento', value=item.metadados && item.metadados.evento || '')
+            li
+              label Local:
+              input(type='text', name='local', value=item.metadados && item.metadados.local || '')
+        else
+          p Nenhum metadado específico para este tipo.
+
+
+
+      section 
+        label Comentários 
+        if item.comentarios && item.comentarios.length
+          each comentario in item.comentarios
+            .comentario-block(style="margin-bottom: 12px; padding: 8px; border-radius: 6px; background: #f7f7f7;")
+              label(style="font-weight: bold;") Data:
+              span= new Date(comentario.data).toLocaleString()
+              br
+              label(style="font-weight: bold;") Autor:
+              span= comentario.autor.username
+              br
+              label(style="font-weight: bold;") Texto:
+              span= comentario.texto
+        else
+          p Nenhum comentário.
+
+      section
+        label Ficheiros
+        .image-grid
+          each ficheiro in item.componentes && item.componentes.ficheiros || []
+            if ficheiro.match(/\.(jpg|jpeg|png|gif|bmp|webp)$/i)
+              .file-wrapper(style="display:inline-block; position:relative; margin:8px;")
+                img(src=`http://localhost:3000/api/files/${ficheiro}`, alt='imagem', class='preview')
+                button.delete-file-btn(
+                  type="button",
+                  data-filename=ficheiro,
+                  style="position:absolute; top:2px; right:2px; background:#fff; border:none; border-radius:50%; cursor:pointer;"
+                ) ❌
+        ul.files
+          each ficheiro in item.componentes && item.componentes.ficheiros || []
+            if !ficheiro.match(/\.(jpg|jpeg|png|gif|bmp|webp)$/i)
+              li
+                i(class='fa fa-file')
+                a(href=`http://localhost:3000/api/files/${ficheiro}`, target='_blank')= ficheiro
+                button.delete-file-btn(
+                  type="button",
+                  data-filename=ficheiro,
+                  style="margin-left:8px; background:#fff; border:1px solid #c83f45; border-radius:4px; cursor:pointer;"
+                ) ❌
+      section
+        Label Stats 
+        ul
+          li Total de Visualizações: #{item.stats.views}
+          li Total de Downloads: #{item.stats.downloads}
+
+      .actions
+        button(type='submit' class='save-button') Guardar
+        button(type='button' class='download-btn') Download Item
+        a.button(href=`/me/${item.produtor._id}`, style='background: gray', class='cancel') Cancelar
+    
+  script.
+    const itemId = "#{item._id}";
+
+    // Adicionar ficheiro
+    document.getElementById('add-file').addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+
+      input.addEventListener('change', () => {
+        const file = input.files[0];
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append('foto', file); // <-- Verifica se é o nome correto no backend ('foto' ou 'file')
+
+        const itemId = document.getElementById('item-editor-form').dataset.id;
+
+        fetch(`http://localhost:3000/api/files/${itemId}`, {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => {
+          if (!res.ok) {
+            throw new Error('Erro ao carregar o ficheiro');
+          }
+          return res.json();
+        })
+        .then(data => {
+          const nome = data.nome;
+          const fileUrl = `http://localhost:3000/api/files/${itemId}/${nome}`;
+
+          // Verifica se é imagem
+          if (file.type.startsWith('image/')) {
+            const div = document.createElement('div');
+            div.classList.add('file-wrapper');
+            div.innerHTML = `
+              <img src="${fileUrl}" class="preview" alt="${nome}">
+              <button type="button" class="delete-file-btn" data-filename="${nome}">🗑️</button>
+            `;
+            document.querySelector('.image-grid').appendChild(div);
+          } else {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <i class="fa fa-file"></i> 
+              <a href="${fileUrl}" target="_blank">${nome}</a>
+              <button type="button" class="delete-file-btn" data-filename="${nome}">🗑️</button>
+            `;
+            document.querySelector('.files').appendChild(li);
+          }
+
+          // Recarregar os event listeners dos botões de delete
+          addDeleteListeners();
+        })
+        .catch(err => {
+          console.error(err);
+          alert('Erro ao carregar o ficheiro');
+        });
+      });
+
+      input.click();
+    });
+
+    // Função para adicionar listeners aos botões de apagar ficheiros
+    function addDeleteListeners() {
+      document.querySelectorAll('.delete-file-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const filename = this.dataset.filename;
+          const itemId = document.getElementById('item-editor-form').dataset.id;
+          if (confirm(`Remover o ficheiro "${filename}"?`)) {
+            fetch(`http://localhost:3000/api/files/${itemId}/${filename}`, {
+              method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+              if (data.sucesso) {
+                // Remove o elemento do DOM
+                if (this.closest('.file-wrapper')) {
+                  this.closest('.file-wrapper').remove();
+                } else if (this.closest('li')) {
+                  this.closest('li').remove();
+                }
+              } else {
+                alert('Erro ao remover ficheiro: ' + (data.erro || ''));
+              }
+            })
+            .catch(err => {
+              alert('Erro de rede ao remover ficheiro.');
+            });
+          }
+        });
+      });
+    }
+
+
+    document.querySelector('.actions .download-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const itemId = document.getElementById('item-editor-form').dataset.id;
+      fetch(`http://localhost:3000/api/items/dip/${itemId}`)
+        .then(response => {
+          if (!response.ok) throw new Error('Erro ao fazer download do item');
+          return response.blob();
+        })
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `item_${itemId}.zip`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          window.URL.revokeObjectURL(url);
+        })
+        .catch(err => {
+          alert('Erro ao fazer download do item.');
+        });
+    });
+
+    // Chama no carregamento inicial da página para os ficheiros já existentes
+    document.addEventListener('DOMContentLoaded', addDeleteListeners);
+
+  if token
+      script.
+        window.apiToken = "#{token}";
+
+  script(src='/javascripts/itemEditor.js')
+  script(src='/javascripts/classificadorInput.js')

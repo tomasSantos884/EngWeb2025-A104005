@@ -1,0 +1,102 @@
+extends layout
+
+block content
+  .prompt
+    h3 Criar Novo Item
+
+    form(id='item-form' method='POST' enctype='multipart/form-data')
+      section
+        label(for='titulo') Título
+        input(type='text', name='titulo', required)
+
+      section
+        label(for='descricao') Descrição
+        input(type='text', name='descricao')
+
+      section
+        label(for='tipoRecurso') Tipo de Recurso
+        select(name='tipoRecurso', id='tipoRecurso', required)
+          option(value='') Seleciona...
+          option(value='Viagens') Viagens
+          option(value='Gastronomia') Gastronomia
+          option(value='Journaling') Journaling
+          option(value='Despesas') Despesas
+          option(value='Eventos') Eventos
+
+      hr
+
+      div#metadados-container
+        .metadado(data-tipo='Viagens', hidden)
+          label Destino
+          input(type='text', name='destino')
+          label Duração (dias)
+          input(type='number', name='duracaoDias')
+
+        .metadado(data-tipo='Gastronomia', hidden)
+          label Restaurante
+          input(type='text', name='restaurante')
+          label Prato
+          input(type='text', name='prato')
+
+        .metadado(data-tipo='Despesas', hidden)
+          label Valor (€)
+          input(type='number', name='valor', step='0.01')
+          label Categoria
+          input(type='text', name='categoria')
+
+        .metadado(data-tipo='Eventos', hidden)
+          label Nome do Evento
+          input(type='text', name='evento')
+          label Local
+          input(type='text', name='local')
+
+      section
+        label Classificadores
+        #classificadores-container
+          input#classificadorInput(type='text', placeholder='Escreve e usa vírgula...')
+          input(type='hidden', name='classificadores')
+
+      section(style="display: flex; align-items: flex-start; gap: 8px; margin-top: 10px;")
+        label(for='visibilidade') Público
+        input(type='checkbox', name='visibilidade', id='visibilidade')
+
+      hr
+
+      section
+        label(for='texto') Texto
+        textarea.txt-area(style= "width: 98%",name='texto')
+
+      section
+        label(for='ficheiros') Ficheiros
+        input(type='file', name='ficheiros', multiple)
+
+
+
+      hr
+      button(type='submit') Guardar Item
+      a.button(href=`/me/${user._id}`, style='background: gray;') Cancelar
+      p DEBUG - Token from res.locals: #{token}
+
+  script.
+    window.loggedInUser = "#{user._id}"
+  script.
+    document.addEventListener('DOMContentLoaded', function () {
+      const tipoSelect = document.getElementById('tipoRecurso');
+      const metadadoGrupos = document.querySelectorAll('.metadado');
+      tipoSelect.addEventListener('change', () => {
+        const tipo = tipoSelect.value;
+        metadadoGrupos.forEach(div => {
+          div.hidden = div.dataset.tipo !== tipo;
+        });
+      });
+    });
+
+
+  //- Make token available to client-side script
+  if token
+    script.
+      window.apiToken = "#{token}";
+  
+  script(src='/javascripts/itemSubmit.js')
+  script(src='/javascripts/classificadorInput.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js')

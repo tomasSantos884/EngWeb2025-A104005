@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Manifesto SIP",
+    "type": "object",
+    "required": [
+      "titulo",
+      "dataCriacao",
+      "dataSubmissao",
+      "produtor",
+      "submissor",
+      "tipoRecurso",
+      "componentes"
+    ],
+    "properties": {
+      "titulo": { "type": "string" },
+      "descricao": { "type": "string" },
+      "dataCriacao": { "type": "string", "format": "date-time" },
+      "dataSubmissao": { "type": "string", "format": "date-time" },
+      "produtor": { "type": "string" },
+      "submissor": { "type": "string" },
+      "tipoRecurso": {
+        "type": "string",
+        "enum": [
+          "Viagens",
+          "Gastronomia",
+          "Journaling",
+          "Despesas",
+          "Eventos"
+        ]
+      },
+      "classificadores": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "visibilidade": { "type": "boolean" },
+      "componentes": {
+        "type": "object",
+        "properties": {
+          "texto": { "type": "string" },
+          "fotos": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "ficheiros": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "checklist": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "hyperlinks": {
+            "type": "array",
+            "items": { "type": "string", "format": "uri" }
+          }
+        }
+      },
+  
+      "destino": { "type": "string" },
+      "duracaoDias": { "type": "integer" },
+      "restaurante": { "type": "string" },
+      "prato": { "type": "string" },
+      "tipoLista": { "type": "string" },
+      "numeroItens": { "type": "integer" },
+      "humor": { "type": "string" },
+      "topicos": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "assunto": { "type": "string" },
+      "tags": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "valor": { "type": "number" },
+      "categoria": { "type": "string" },
+      "evento": { "type": "string" },
+      "local": { "type": "string" }
+    }
+  }
+  

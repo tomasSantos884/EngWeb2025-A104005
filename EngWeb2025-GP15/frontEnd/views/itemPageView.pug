@@ -1,0 +1,88 @@
+extends layout
+
+block content
+  .item-viewer
+    h2 Visualização de Item
+
+    section
+      label Título:
+      span= item.titulo
+
+    section
+      label Texto:
+      pre= item.componentes && item.componentes.texto
+
+    section
+      label Descrição:
+      pre= item.descricao
+
+    section
+      label Classificadores:
+      if item.classificadores && item.classificadores.length
+        each c in item.classificadores
+          span.tag= c
+      else
+        span Nenhum classificador
+
+    section
+      label Público:
+      span= item.visibilidade ? 'Sim' : 'Não'
+
+    section
+      label Metadados:
+      if item.tipoRecurso === 'Viagens'
+        ul
+          li Destino: #{item.metadados && item.metadados.destino}
+          li Duração (dias): #{item.metadados && item.metadados.duracaoDias}
+      else if item.tipoRecurso === 'Gastronomia'
+        ul
+          li Restaurante: #{item.metadados && item.metadados.restaurante}
+          li Prato: #{item.metadados && item.metadados.prato}
+      else if item.tipoRecurso === 'Despesas'
+        ul
+          li Valor (€): #{item.metadados && item.metadados.valor}
+          li Categoria: #{item.metadados && item.metadados.categoria}
+      else if item.tipoRecurso === 'Eventos'
+        ul
+          li Evento: #{item.metadados && item.metadados.evento}
+          li Local: #{item.metadados && item.metadados.local}
+      else
+        span Nenhum metadado específico para este tipo.
+
+    section
+      label Comentários:
+      if item.comentarios && item.comentarios.length
+        each comentario in item.comentarios
+          .comentario-block(style="margin-bottom: 12px; padding: 8px; border-radius: 6px; background: #f7f7f7;")
+            label(style="font-weight: bold;") Data:
+            span= new Date(comentario.data).toLocaleString()
+            br
+            label(style="font-weight: bold;") Autor:
+            span= comentario.autor._id
+            br
+            label(style="font-weight: bold;") Texto:
+            span= comentario.texto
+      else
+        span Nenhum comentário.
+
+    section
+      label Ficheiros:
+      .image-grid
+        each ficheiro in item.componentes && item.componentes.ficheiros || []
+          if ficheiro.match(/\.(jpg|jpeg|png|gif|bmp|webp)$/i)
+            img(src=`http://localhost:3000/api/files/${ficheiro}`, alt='imagem', class='preview')
+      ul.files
+        each ficheiro in item.componentes && item.componentes.ficheiros || []
+          if !ficheiro.match(/\.(jpg|jpeg|png|gif|bmp|webp)$/i)
+            li
+              i(class='fa fa-file')
+              a(href=`http://localhost:3000/api/files/${ficheiro}`, target='_blank')= ficheiro
+
+    section
+        Label Stats 
+        ul
+          li Total de Visualizações: #{item.stats.views}
+          li Total de Downloads: #{item.stats.downloads}
+
+    .actions
+      a.button(href=`/public`, style='background: gray', class='cancel') Voltar

@@ -1,0 +1,153 @@
+{"level":"info","message":"Novo SIP submetido","timestamp":"2025-06-01T21:17:12.674Z","user":"683c871724a95c5b15d0d35a"}
+{"itemId":"683cc358437afef002080e57","level":"info","message":"SIP ingerido com sucesso","timestamp":"2025-06-01T21:17:12.746Z"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T21:17:39.755Z"}
+{"itemId":"683c871724a95c5b15d0d35a","level":"warn","message":"Item não encontrado","timestamp":"2025-06-01T21:17:49.621Z"}
+{"itemId":"683c871724a95c5b15d0d35a","level":"warn","message":"Item não encontrado","timestamp":"2025-06-01T21:18:09.894Z"}
+{"info":"Erro de autenticação. Salt não encontrado.","level":"warn","message":"Falha de autenticação","timestamp":"2025-06-01T21:19:53.388Z","username":"321"}
+{"info":"Password ou username incorreto.","level":"warn","message":"Falha de autenticação","timestamp":"2025-06-01T21:19:57.550Z","username":"teste"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:20:00.328Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:20:10.486Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.35.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:20:10.564Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:20:10.566Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"DIP gerado e enviado","timestamp":"2025-06-01T21:20:51.447Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Download de DIP","timestamp":"2025-06-01T21:20:51.454Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:20:56.603Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683cc358437afef002080e57","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:20:58.378Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:21:01.427Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:22:56.546Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.35.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:22:56.654Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:22:56.656Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:23:00.259Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683cc358437afef002080e57","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:23:01.324Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:23:02.739Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8c7a08bebf30d331b910","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:23:04.155Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:23:07.293Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:29:20.617Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:29:23.404Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.35.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:29:23.478Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:29:23.480Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Ficheiro adicionado ao item","nomeFicheiro":"Screenshot 2025-05-24 at 19.29.35.png","timestamp":"2025-06-01T21:31:25.300Z"}
+{"filePath":"683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.35.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:31:25.305Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:31:29.594Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:31:30.915Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.35.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:31:30.992Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:31:30.994Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:31:34.467Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8c7a08bebf30d331b910","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:31:35.705Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:31:36.919Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683cc358437afef002080e57","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:31:37.838Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:31:39.067Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:31:39.893Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:31:39.952Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.35.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:31:39.965Z"}
+{"filename":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.35.png","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Ficheiro removido do item","timestamp":"2025-06-01T21:31:42.173Z"}
+{"filename":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Ficheiro removido do item","timestamp":"2025-06-01T21:31:44.444Z"}
+{"filename":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.35.png","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Ficheiro removido do item","timestamp":"2025-06-01T21:31:48.222Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Ficheiro adicionado ao item","nomeFicheiro":"Screenshot 2025-05-27 at 18.22.23.png","timestamp":"2025-06-01T21:31:53.779Z"}
+{"filePath":"683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T21:31:53.783Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:31:57.776Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:31:58.332Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:31:58.401Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:32:03.141Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:32:08.131Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:32:08.197Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:32:11.234Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:32:12.166Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:32:12.205Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:32:15.119Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:32:20.538Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:32:20.602Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:32:22.282Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:41:18.256Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:41:20.635Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:41:20.722Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:43:37.311Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:43:39.611Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:43:39.710Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:45:03.375Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:45:08.368Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T21:45:11.093Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T21:45:11.173Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:47:09.393Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:48:14.186Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:52:21.247Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T21:59:04.005Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:01:22.352Z","userId":"683c871724a95c5b15d0d35a"}
+{"commentId":"683ccdb52d2bb189bace61d8","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Comentário criado","timestamp":"2025-06-01T22:01:25.625Z"}
+{"commentId":"683ccdb52d2bb189bace61d8","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Comentário criado","timestamp":"2025-06-01T22:01:25.626Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:01:26.668Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:01:28.197Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T22:01:28.283Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:01:34.704Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:03:35.360Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:03:36.472Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T22:03:36.552Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Item atualizado","timestamp":"2025-06-01T22:03:38.639Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Item atualizado","timestamp":"2025-06-01T22:03:38.640Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:03:39.473Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:03:42.048Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T22:03:42.120Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Item atualizado","timestamp":"2025-06-01T22:03:44.806Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Item atualizado","timestamp":"2025-06-01T22:03:44.806Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:03:45.656Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Estatísticas calculadas para utilizador","timestamp":"2025-06-01T22:03:46.384Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de estatísticas do utilizador","timestamp":"2025-06-01T22:03:46.385Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Estatísticas calculadas para utilizador","timestamp":"2025-06-01T22:04:36.748Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de estatísticas do utilizador","timestamp":"2025-06-01T22:04:36.748Z","userId":"683c871724a95c5b15d0d35a"}
+{"commentId":"683cce852d2bb189bace6211","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Comentário criado","timestamp":"2025-06-01T22:04:53.451Z"}
+{"commentId":"683cce852d2bb189bace6211","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Comentário criado","timestamp":"2025-06-01T22:04:53.451Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:04:54.547Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:04:55.904Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T22:04:55.981Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Ficheiro adicionado ao item","nomeFicheiro":"Screenshot 2025-05-24 at 19.29.43.png","timestamp":"2025-06-01T22:05:04.198Z"}
+{"filePath":"683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","level":"warn","message":"Ficheiro não encontrado","timestamp":"2025-06-01T22:05:04.203Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Item atualizado","timestamp":"2025-06-01T22:05:06.224Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Item atualizado","timestamp":"2025-06-01T22:05:06.224Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:05:07.522Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:05:08.941Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T22:05:09.013Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T22:05:09.016Z"}
+{"filename":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-27 at 18.22.23.png","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Ficheiro removido do item","timestamp":"2025-06-01T22:05:11.266Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"DIP gerado e enviado","timestamp":"2025-06-01T22:05:12.812Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Download de DIP","timestamp":"2025-06-01T22:05:12.820Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:05:14.418Z","userId":"683c871724a95c5b15d0d35a"}
+{"info":"Erro de autenticação. Salt não encontrado.","level":"warn","message":"Falha de autenticação","timestamp":"2025-06-01T22:05:20.337Z","username":"public"}
+{"email":"public@mail.com","level":"warn","message":"Tentativa de registo de utilizador já existente","timestamp":"2025-06-01T22:05:31.546Z","username":"public"}
+{"info":"Erro de autenticação. Salt não encontrado.","level":"warn","message":"Falha de autenticação","timestamp":"2025-06-01T22:05:36.719Z","username":"public"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:06:36.628Z"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:06:37.098Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:06:45.012Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:06:46.736Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:07:25.223Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:07:27.393Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:08:04.621Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:08:08.011Z"}
+{"commentId":"683ccf4adc41785022313e5d","itemId":"683b12c7b3431b16ab667028","level":"info","message":"Comentário criado","timestamp":"2025-06-01T22:08:10.773Z"}
+{"commentId":"683ccf4adc41785022313e5d","itemId":"683b12c7b3431b16ab667028","level":"info","message":"Comentário criado","timestamp":"2025-06-01T22:08:10.774Z"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:08:11.919Z"}
+{"itemId":"683b12c7b3431b16ab667028","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:08:12.604Z"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:08:18.096Z"}
+{"itemId":"683b12c7b3431b16ab667028","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:08:37.691Z"}
+{"itemId":"683b12c7b3431b16ab667028","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:08:46.852Z"}
+{"itemId":"683b12c7b3431b16ab667028","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:08:47.529Z"}
+{"itemId":"683b12c7b3431b16ab667028","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:09:06.695Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:15:42.530Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Estatísticas calculadas para utilizador","timestamp":"2025-06-01T22:15:44.066Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de estatísticas do utilizador","timestamp":"2025-06-01T22:15:44.066Z","userId":"683c871724a95c5b15d0d35a"}
+{"email":"testuser.postman@example.com","level":"info","message":"Utilizador registado e logado com sucesso","timestamp":"2025-06-01T22:49:21.384Z","username":"testuser_postman"}
+{"email":"mail@mail.com","level":"info","message":"Utilizador registado e logado com sucesso","timestamp":"2025-06-01T22:50:29.900Z","username":"useaeaea"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:50:29.919Z","userId":"683cd9350171ab36d7a29caf"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:54:54.197Z","userId":"683c871724a95c5b15d0d35a"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Visualização de item","timestamp":"2025-06-01T22:54:55.934Z"}
+{"filePath":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","level":"info","message":"Ficheiro enviado","timestamp":"2025-06-01T22:54:56.008Z"}
+{"filename":"aips/2025/06/683c8b987c13a55813ee0444/Screenshot 2025-05-24 at 19.29.43.png","itemId":"683c8b987c13a55813ee0444","level":"info","message":"Ficheiro removido do item","timestamp":"2025-06-01T22:55:12.269Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Item atualizado","timestamp":"2025-06-01T22:55:13.522Z"}
+{"itemId":"683c8b987c13a55813ee0444","level":"info","message":"Item atualizado","timestamp":"2025-06-01T22:55:13.523Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:55:14.517Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:55:17.205Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:55:20.513Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:55:22.297Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:55:24.888Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:55:28.849Z"}
+{"level":"info","message":"Items consultados para utilizador","timestamp":"2025-06-01T22:55:32.707Z","userId":"683c871724a95c5b15d0d35a"}
+{"level":"info","message":"Consulta de items públicos","timestamp":"2025-06-01T22:55:33.626Z"}

@@ -1,0 +1,137 @@
+#classificadores-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+
+
+#classificadorInput {
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 120px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+table th {
+  background-color: #c83f45;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-itens {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  table-layout: auto;
+}
+
+.table-itens th, .table-itens td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+  word-break: break-word;
+}
+
+.table-itens tr:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.tag {
+  background-color: #c83f45;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.filters {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  
+}
+
+.filters h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filters ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.filters ul li {
+  background: #fff;
+  border: 1px solid #c83f45;
+  border-radius: 4px;
+  padding: 5px 10px;
+  flex: 0 0 auto;
+  overflow-x: auto;
+}
+
+.filters label {
+  cursor: pointer;
+  font-size: 14px;
+  color: #c83f45;
+  font-weight: 500;
+}
+
+.filters input[type="checkbox"] {
+  margin-right: 5px;
+  accent-color: #c83f45;
+}
+
+#sort-select {
+  padding: 8px 12px;
+  border: 1px solid #c83f45;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.share-btn, .comment-btn, .delete-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0%;
+}
+
+

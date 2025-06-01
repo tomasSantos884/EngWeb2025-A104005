@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    section.prompt
+        img(src="/images/icon.png", alt="Logo", width="100", height="100")
+        form(action="/auth/signup", method="post")
+            section
+            label(for="username") Username
+            input#username(name="username", type="text", autocomplete="username", required)
+            section
+            label(for="nome") Nome
+            input#nome(name="nome", type="text", autocomplete="name", required)
+            section 
+            label(for="email") Email
+            input#email(name="email", type="email", autocomplete="email", required)
+            section
+            label(for="new-password") Password
+            input#password(name="password", type="password", autocomplete="password", required)
+            button(type="submit") Sign up
+        hr
+        p.help
+            | Já tens conta? 
+            a(href="/auth/login") Sign In
+        footer.info
+        p 
+            | Desenvolvido por Group15
+        p 
+            | No âmbito de EngWeb2025
